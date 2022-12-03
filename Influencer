@@ -1,0 +1,246 @@
+public class Influencer {
+
+    private String name;
+    private String channel;
+    private String country;
+    private String topic;
+    private Months months;
+    @SuppressWarnings("rawtypes")
+    private Statistics[] myArray;
+
+
+    public Influencer(
+        Months months,
+        String name,
+        String channel,
+        String country,
+        String topic, int li, int pt, int fw, int ct, int vw) {
+        this.name = name;
+        this.channel = channel;
+        this.country = country;
+        this.topic = topic;
+        
+        myArray = new Statistics[3];
+        myArray[0] = new Statistics(months, li, pt, fw, ct, vw);
+        
+    } 
+
+
+    public String getName() {
+        return name;
+    }
+
+
+    public String getChannel() {
+        return channel;
+    }
+
+
+    public String getCountry() {
+        return country;
+    }
+
+
+    public String getTopic() {
+        return topic;
+    }
+    
+    
+    public Statistics[] getStats() {
+        return myArray;
+    }
+
+    
+    public void sort() {
+    //sort my channel name
+    
+    //add
+    myArray[1] = new Statistics(Months.FEBRUARY, ct, fw, pt, li, vw);
+    myArray[2] = new Statistics(Months.MARCH, ct, fw, pt, li, vw);
+    
+    
+    }
+    
+    public void addStatistics(Statistics other) {
+        
+        if (name.getClass().equals(channel)) {
+            name.append(myArray[0]);
+            
+            //next empty spot if it equals to myArray[1]/ myArray[2]
+        }
+        
+    }
+    
+    
+    public void sort() {
+        String temp;
+        for (int j = 0; j < myArray[0].length; j++) {
+            for (int i = j + 1; i < myArray[0].length; i++) {
+                if (myArray[0].compareTo(myArray[1]) < 0) {
+                    temp = myArray[j];
+                    myArray[j] = myArray[i];
+                    myArray[i] = temp;
+
+                }
+            }
+        }
+    }
+    
+  //sort by engagement 
+    //sort by engagement rate by each month
+    
+    /**
+    public String compareTo() {
+        
+    }
+    */
+
+    
+        
+        
+        
+    public boolean equals(Object obj) {
+
+        if (obj == null) {
+            return false;
+        }
+        if (this == obj) {
+            return true;
+        }
+        if (this.getClass() == obj.getClass()) {
+            return this.getName().equals(((Influencer)obj).getName()) && 
+                this.getName().equals(((Influencer)obj).getName()) &&
+                this.getChannel().equals(((Influencer)obj).getChannel()) &&
+                this.getCountry().equals(((Influencer)obj).getCountry()) &&
+                this.getTopic().equals(((Influencer)obj).getTopic()) &&
+                this.getStats().equals(((Influencer)obj).getStats());
+        }
+        else {
+            return false;
+        }
+    }
+
+}
+public class Influencer {
+
+    private String name;
+    private String channel;
+    private String country;
+    private String topic;
+    private Months months;
+    @SuppressWarnings("rawtypes")
+    private Statistics[] myArray;
+
+
+    public Influencer(
+        Months months,
+        String name,
+        String channel,
+        String country,
+        String topic, int li, int pt, int fw, int ct, int vw) {
+        this.name = name;
+        this.channel = channel;
+        this.country = country;
+        this.topic = topic;
+        
+        myArray = new Statistics[3];
+        myArray[0] = new Statistics(months, li, pt, fw, ct, vw);
+        
+    } 
+
+
+    public String getName() {
+        return name;
+    }
+
+
+    public String getChannel() {
+        return channel;
+    }
+
+
+    public String getCountry() {
+        return country;
+    }
+
+
+    public String getTopic() {
+        return topic;
+    }
+    
+    
+    public Statistics[] getStats() {
+        return myArray;
+    }
+
+    
+    public void sort() {
+    //sort my channel name
+    
+    //add
+    myArray[1] = new Statistics(Months.FEBRUARY, ct, fw, pt, li, vw);
+    myArray[2] = new Statistics(Months.MARCH, ct, fw, pt, li, vw);
+    
+    
+    }
+    
+    public void addStatistics(Statistics other) {
+        
+        if (name.getClass().equals(channel)) {
+            name.append(myArray[0]);
+            
+            //next empty spot if it equals to myArray[1]/ myArray[2]
+        }
+        
+    }
+    
+    
+    public void sort() {
+        String temp;
+        for (int j = 0; j < myArray[0].length; j++) {
+            for (int i = j + 1; i < myArray[0].length; i++) {
+                if (myArray[0].compareTo(myArray[1]) < 0) {
+                    temp = myArray[j];
+                    myArray[j] = myArray[i];
+                    myArray[i] = temp;
+
+                }
+            }
+        }
+    }
+    
+  //sort by engagement 
+    //sort by engagement rate by each month
+    
+    /**
+    public String compareTo() {
+        
+    }
+    */
+
+    
+        
+        
+        
+    public boolean equals(Object obj) {
+
+        if (obj == null) {
+            return false;
+        }
+        if (this == obj) {
+            return true;
+        }
+        if (this.getClass() == obj.getClass()) {
+            return this.getName().equals(((Influencer)obj).getName()) && 
+                this.getName().equals(((Influencer)obj).getName()) &&
+                this.getChannel().equals(((Influencer)obj).getChannel()) &&
+                this.getCountry().equals(((Influencer)obj).getCountry()) &&
+                this.getTopic().equals(((Influencer)obj).getTopic()) &&
+                this.getStats().equals(((Influencer)obj).getStats());
+        }
+        else {
+            return false;
+        }
+    }
+
+}

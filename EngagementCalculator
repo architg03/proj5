@@ -1,0 +1,38 @@
+public class EngagementCalculator {
+
+public static final int RATING;
+    
+    double rate = 0;
+    double reach = 0;
+    int totalEng = 0;
+    int totalFol = 0;
+    
+    public static final int RATE = 3;
+
+    public Influencer<Person> data = new Influencer<Person>();
+        
+    
+    public EngagementCalculator(Statistics comments) throws IllegalException {
+        this.RATING = RATING;
+    }
+    
+    public double getEngagementRate() {
+        rate = (totalEng/ totalFol) * (0.1);
+    }
+    
+    public double getEngagementReach() {
+        reach = (totalEng/ reach) * (0.1);
+    }
+    
+    public int getEngagement() {
+        sum = comments + likes;
+    }
+    
+    public int getFollowers() {
+        return followers;
+    }
+    
+    public int getReach() {
+        return views;
+    }
+}

@@ -1,0 +1,99 @@
+public class Statistics implements Comparable<Statistics> {
+
+    private int likes;
+    private int posts;
+    private int followers;
+    private int comments;
+    private int views;
+
+    public Statistics(int li, int pt, int fw, int ct, int vw) {
+
+        likes = li;
+        posts = pt;
+        followers = fw;
+        comments = ct;
+        views = vw;
+
+    }
+
+
+    public int getLikes() {
+        return likes;
+    }
+
+
+    public int getPosts() {
+        return posts;
+    }
+
+
+    public int getFollowers() {
+        return followers;
+    }
+
+
+    public int getComments() {
+        return comments;
+    }
+
+
+    public int getViews() {
+        return views;
+    }
+
+
+    public boolean isLessThanOrEqualTo(Statistics other) {
+        if ((this.likes <= other.likes) && (this.posts <= other.posts)
+            && (this.followers <= other.followers)
+            && (this.comments <= other.comments)
+            && (this.views <= other.views)) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
+
+
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (this.getClass() == obj.getClass()) {
+            Statistics stats = (Statistics)obj;
+            return this.likes == stats.likes && this.posts == stats.posts
+                && this.followers == stats.followers
+                && this.comments == stats.comments && this.views == stats.views;
+        }
+        else {
+            return false;
+        }
+    }
+
+
+    @Override
+    public int compareTo(Statistics stats) {
+        if (stats == null) {
+            throw new IllegalArgumentException();
+        }
+        int otherTotal = 0;
+        int total = 0;
+        otherTotal = stats.likes + stats.posts + stats.followers
+            + stats.comments + stats.views;
+        total = this.likes + this.posts + this.followers + this.comments
+            + this.views;
+
+        if (total < otherTotal) {
+            return -1;
+        }
+        if (total > otherTotal) {
+            return 1;
+        }
+        return 0;
+
+    }
+
+}
