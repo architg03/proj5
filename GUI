@@ -40,8 +40,8 @@ public class GUI {
      *
      * @param reader the reader
      */
-    public GUI(EngagementReader reader) {
-        this.reader = reader;
+    public GUI() {
+        
         window = new Window("Social Media Visualization");
         
         nameSort = new Button("Sort by Channel Name");

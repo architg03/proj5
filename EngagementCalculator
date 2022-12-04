@@ -1,4 +1,4 @@
-import java.text.DecimalFormat;
+import java.text.NumberFormat;
 
 // TODO: Auto-generated Javadoc
 /**
@@ -6,11 +6,7 @@ import java.text.DecimalFormat;
  */
 public class EngagementCalculator {
 
-    /** The formatter. */
-    DecimalFormat formatter = new DecimalFormat();
-
-    /** The Constant RATING. */
-    public static final int RATING;
+    public static final int RATING = 0;
 
     /** The rate. */
     double rate = 0;
@@ -26,9 +22,6 @@ public class EngagementCalculator {
 
     /** The Constant RATE. */
     public static final int RATE = 3;
-
-    /** The data. */
-    public Influencer<Person> data = new Influencer<Person>();
 
     /**
      * Instantiates a new engagement calculator.
@@ -49,7 +42,9 @@ public class EngagementCalculator {
      * @return the engagement rate
      */
     public double getEngagementRate() {
-        formatter(rate = (totalEng / totalFol) * (0.1));
+        /** The formatter. */
+        rate = (totalEng / totalFol) * (0.1);
+        return rate;
     }
 
 
@@ -59,7 +54,8 @@ public class EngagementCalculator {
      * @return the engagement reach
      */
     public double getEngagementReach() {
-        formatter(reach = (totalEng / reach) * (0.1));
+        reach = (totalEng / reach) * (0.1);
+        return rate;
 
     }
 
@@ -69,18 +65,57 @@ public class EngagementCalculator {
      *
      * @return the engagement
      */
-    public int getEngagement() {
-        formatter(sum = comments + likes);
+    public int getEngagementJanruary() {
+        Statistics stat = new Statistics(Months.JANRARY, stat.getLikes(), stat.getPosts(), stat.getFollowers(), stat.getComments(), stat.getViews());
+        totalEng = stat.getComments() + stat.getLikes();
+        return totalEng;
     }
-
+    /**
+     * Gets the engagement.
+     *
+     * @return the engagement
+     */
+    public int getEngagementFebruary() {
+        Statistics stat = new Statistics(Months.FEBRUARY, stat.getLikes(), stat.getPosts(), stat.getFollowers(), stat.getComments(), stat.getViews());
+        totalEng = stat.getComments() + stat.getLikes();
+        return totalEng;
+    }  /**
+     * Gets the engagement.
+    *
+    * @return the engagement
+    */
+   public int getEngagementMarch() {
+       Statistics stat = new Statistics(Months.MARCH, stat.getLikes(), stat.getPosts(), stat.getFollowers(), stat.getComments(), stat.getViews());
+       totalEng = stat.getComments() + stat.getLikes();
+       return totalEng;
+   }
 
     /**
      * Gets the followers.
      *
      * @return the followers
      */
-    public int getFollowers() {
-        return followers;
+    public int getFollowersJanruary() {
+        Statistics stat = new Statistics(Months.JANRARY, stat.getLikes(), stat.getPosts(), stat.getFollowers(), stat.getComments(), stat.getViews());
+        return stat.getFollowers();
+    }
+    /**
+     * Gets the followers.
+     *
+     * @return the followers
+     */
+    public int getFollowersFebrruary() {
+        Statistics stat = new Statistics(Months.FEBRUARY, stat.getLikes(), stat.getPosts(), stat.getFollowers(), stat.getComments(), stat.getViews());
+        return stat.getFollowers();
+    }
+    /**
+     * Gets the followers.
+     *
+     * @return the followers
+     */
+    public int getFollowersMarch() {
+        Statistics stat = new Statistics(Months.MARCH, stat.getLikes(), stat.getPosts(), stat.getFollowers(), stat.getComments(), stat.getViews());
+        return stat.getFollowers();
     }
 
 
@@ -89,7 +124,26 @@ public class EngagementCalculator {
      *
      * @return the reach
      */
-    public int getReach() {
-        return views;
+    public int getReachMarch() {
+        Statistics stat = new Statistics(Months.MARCH, stat.getLikes(), stat.getPosts(), stat.getFollowers(), stat.getComments(), stat.getViews());
+        return stat.getViews();
+    }
+    /**
+     * Gets the reach.
+     *
+     * @return the reach
+     */
+    public int getReachJanruary() {
+        Statistics stat = new Statistics(Months.JANRARY, stat.getLikes(), stat.getPosts(), stat.getFollowers(), stat.getComments(), stat.getViews());
+        return stat.getViews();
+    }
+    /**
+     * Gets the reach.
+     *
+     * @return the reach
+     */
+    public int getReachFebruary() {
+        Statistics stat = new Statistics(Months.FEBRUARY, stat.getLikes(), stat.getPosts(), stat.getFollowers(), stat.getComments(), stat.getViews());
+        return stat.getViews();
     }
 }

@@ -13,14 +13,40 @@
  */
 public class Influencer {
 
+    /**
+     * Represents the name
+     */
     private String name;
+
+    /**
+     * Represents the channel
+     */
     private String channel;
+
+    /**
+     * Represents the country
+     */
     private String country;
+
+    /**
+     * Represents the topic
+     */
     private String topic;
+
+    /**
+     * Represents the months
+     */
     private Months months;
+
+    /**
+     * Represents the Array of the Statistics
+     */
     @SuppressWarnings("rawtypes")
     private Statistics[] myArray;
 
+    /**
+     * Creates the Influencer objects
+     */
     public Influencer(
         Months months,
         String name,
@@ -43,31 +69,63 @@ public class Influencer {
     }
 
 
+    /**
+     * @return name
+     *         retrieves the name
+     */
     public String getName() {
         return name;
     }
 
 
+    /**
+     * @return channel
+     *         retrieves the channel
+     */
     public String getChannel() {
         return channel;
     }
 
 
+    /**
+     * @return country
+     *         retrieves the country
+     */
     public String getCountry() {
         return country;
     }
 
 
+    /**
+     * @return topic
+     *         retrieves the topic
+     */
     public String getTopic() {
         return topic;
     }
 
+    /**
+     * @return months
+     *         retrieves the month.
+     */
+    public Months getMonth() {
+        return months;
+    }
 
+
+    /**
+     * @return myArray
+     *         retrieves the Statistics
+     */
     public Statistics[] getStats() {
         return myArray;
     }
 
 
+    /**
+     * Sorts the name from the file
+     * depending on the months
+     */
     public void nameSort(Influencer args, Statistics other) {
         Statistics temp;
         for (int j = 0; j < myArray.length; j++) {
@@ -79,25 +137,26 @@ public class Influencer {
 
                 }
                 if (this.name.equals(this.channel)) {
-                    myArray[0] = new Statistics(Months.JANUARY, 
-                        other.getComments(), other.getFollowers(), 
-                        other.getLikes(), other.getPosts(),
-                        other.getViews());
-                    myArray[1] = new Statistics(Months.FEBRUARY,
-                        other.getComments(), other.getFollowers(), 
-                        other.getLikes(), other.getPosts(),
-                        other.getViews());
-                    myArray[2] = new Statistics(Months.MARCH, 
-                        other.getComments(), other.getFollowers(), 
-                        other.getLikes(), other.getPosts(),
-                        other.getViews());                   
-                    
-            }
+                    myArray[0] = new Statistics(Months.JANUARY, other
+                        .getComments(), other.getFollowers(), other.getLikes(),
+                        other.getPosts(), other.getViews());
+                    myArray[1] = new Statistics(Months.FEBRUARY, other
+                        .getComments(), other.getFollowers(), other.getLikes(),
+                        other.getPosts(), other.getViews());
+                    myArray[2] = new Statistics(Months.MARCH, other
+                        .getComments(), other.getFollowers(), other.getLikes(),
+                        other.getPosts(), other.getViews());
+
+                }
             }
         }
     }
 
 
+    /**
+     * Sorts the rate of the specific 
+     * influencer by calculating their statistics
+     */
     public void rateSort(EngagementCalculator calc, Statistics other) {
         Statistics temp;
         for (int j = 0; j < myArray.length; j++) {
@@ -108,18 +167,32 @@ public class Influencer {
                     myArray[i] = temp;
 
                 }
-                if (calc.getEngagementRate()==(calc.rate)) {
-                    myArray[0] = new Statistics(Months.JANUARY, 
-                        other.getComments(), other.getFollowers(), 
-                        other.getLikes(), other.getPosts(),
-                        other.getViews());
+                if (this.name.equals(this.channel)) {
+                    if (calc.getEngagementRate() == (calc.rate)) {
+                        myArray[0] = new Statistics(Months.JANUARY, other
+                            .getComments(), other.getFollowers(), other
+                                .getLikes(), other.getPosts(), other
+                                    .getViews());
+                        myArray[1] = new Statistics(Months.FEBRUARY, other
+                            .getComments(), other.getFollowers(), other
+                                .getLikes(), other.getPosts(), other
+                                    .getViews());
+                        myArray[2] = new Statistics(Months.MARCH, other
+                            .getComments(), other.getFollowers(), other
+                                .getLikes(), other.getPosts(), other
+                                    .getViews());
 
+                    }
                 }
             }
         }
     }
 
 
+    /**
+     * Sorts the traditional rate of the specific
+     * influencer by calculating their statistics
+     */
     public void traditionalSort(EngagementCalculator calc, Statistics other) {
         Statistics temp;
         for (int j = 0; j < myArray.length; j++) {
@@ -130,11 +203,21 @@ public class Influencer {
                     myArray[i] = temp;
 
                 }
-                if (calc.getEngagementRate()==(calc.rate)) {
-                    myArray[0] = new Statistics(Months.JANUARY, 
-                        other.getComments(), other.getFollowers(), 
-                        other.getLikes(), other.getPosts(),
-                        other.getViews());
+                if (this.name.equals(this.channel)) {
+                    if (calc.getEngagementRate() == (calc.rate)) {
+                        myArray[0] = new Statistics(Months.JANUARY, other
+                            .getComments(), other.getFollowers(), other
+                                .getLikes(), other.getPosts(), other
+                                    .getViews());
+                        myArray[1] = new Statistics(Months.FEBRUARY, other
+                            .getComments(), other.getFollowers(), other
+                                .getLikes(), other.getPosts(), other
+                                    .getViews());
+                        myArray[2] = new Statistics(Months.MARCH, other
+                            .getComments(), other.getFollowers(), other
+                                .getLikes(), other.getPosts(), other
+                                    .getViews());
+                    }
                 }
             }
 
@@ -142,6 +225,10 @@ public class Influencer {
     }
 
 
+    /**
+     * Sorts the reach of the specific
+     * influencer by calculating their statistics
+     */
     public void reachSort(EngagementCalculator calc, Statistics other) {
         Statistics temp;
         for (int j = 0; j < myArray.length; j++) {
@@ -152,17 +239,31 @@ public class Influencer {
                     myArray[i] = temp;
 
                 }
-                if (calc.reach==(calc.getEngagementReach())) {
-                    myArray[0] = new Statistics(Months.JANUARY, 
-                        other.getComments(), other.getFollowers(), 
-                        other.getLikes(), other.getPosts(),
-                        other.getViews());
+                if (this.name.equals(this.channel)) {
+                    if (calc.reach == (calc.getEngagementReach())) {
+                        myArray[0] = new Statistics(Months.JANUARY, other
+                            .getComments(), other.getFollowers(), other
+                                .getLikes(), other.getPosts(), other
+                                    .getViews());
+                        myArray[1] = new Statistics(Months.FEBRUARY, other
+                            .getComments(), other.getFollowers(), other
+                                .getLikes(), other.getPosts(), other
+                                    .getViews());
+                        myArray[2] = new Statistics(Months.MARCH, other
+                            .getComments(), other.getFollowers(), other
+                                .getLikes(), other.getPosts(), other
+                                    .getViews());
+                    }
                 }
             }
         }
     }
 
 
+    /**
+     * Sorts the statistics of the
+     * influencer by January statistics
+     */
     public void janSort(Statistics other) {
         Statistics temp;
         for (int j = 0; j < myArray.length; j++) {
@@ -174,11 +275,10 @@ public class Influencer {
 
                 }
                 if ((other.getMonths().equals(Months.JANUARY))) {
-                    myArray[0] = new Statistics(Months.JANUARY, 
-                        other.getComments(), other.getFollowers(), 
-                        other.getLikes(), other.getPosts(),
-                        other.getViews());
-                   
+                    myArray[0] = new Statistics(Months.JANUARY, other
+                        .getComments(), other.getFollowers(), other.getLikes(),
+                        other.getPosts(), other.getViews());
+
                 }
             }
 
@@ -187,6 +287,10 @@ public class Influencer {
     }
 
 
+    /**
+     * Sorts the statistics of the
+     * influencer by February statistics
+     */
     public void febSort(Statistics other) {
         Statistics temp;
         for (int j = 0; j < myArray.length; j++) {
@@ -198,10 +302,9 @@ public class Influencer {
 
                 }
                 if ((other.getMonths().equals(Months.FEBRUARY))) {
-                    myArray[0] = new Statistics(Months.FEBRUARY, 
-                        other.getComments(), other.getFollowers(), 
-                        other.getLikes(), other.getPosts(),
-                        other.getViews());
+                    myArray[0] = new Statistics(Months.FEBRUARY, other
+                        .getComments(), other.getFollowers(), other.getLikes(),
+                        other.getPosts(), other.getViews());
 
                 }
             }
@@ -209,6 +312,10 @@ public class Influencer {
     }
 
 
+    /**
+     * Sorts the statistics of the
+     * influencer by March statistics
+     */
     public void marSort(Statistics other) {
         Statistics temp;
         for (int j = 0; j < myArray.length; j++) {
@@ -220,10 +327,9 @@ public class Influencer {
 
                 }
                 if ((other.getMonths().equals(Months.MARCH))) {
-                    myArray[0] = new Statistics(Months.MARCH, 
-                        other.getComments(), other.getFollowers(), 
-                        other.getLikes(), other.getPosts(),
-                        other.getViews());
+                    myArray[0] = new Statistics(Months.MARCH, other
+                        .getComments(), other.getFollowers(), other.getLikes(),
+                        other.getPosts(), other.getViews());
                 }
             }
         }
@@ -231,6 +337,10 @@ public class Influencer {
     }
 
 
+    /**
+     * Sorts the statistics of the
+     * influencer by quarter months statistics
+     */
     public void quarterSort(Statistics other) {
         Statistics temp;
         for (int j = 0; j < myArray.length; j++) {
@@ -241,32 +351,32 @@ public class Influencer {
                     myArray[i] = temp;
 
                 }
-                if ((other.getMonths().equals(Months.JANUARY)) &&
-                    (other.getMonths().equals(Months.FEBRUARY)) &&
-                    (other.getMonths().equals(Months.MARCH))) {
-                    myArray[0] = new Statistics(Months.JANUARY, 
-                        other.getComments(), other.getFollowers(), 
-                        other.getLikes(), other.getPosts(),
-                        other.getViews());
-                    myArray[1] = new Statistics(Months.FEBRUARY,
-                        other.getComments(), other.getFollowers(), 
-                        other.getLikes(), other.getPosts(),
-                        other.getViews());
-                    myArray[2] = new Statistics(Months.MARCH, 
-                        other.getComments(), other.getFollowers(), 
-                        other.getLikes(), other.getPosts(),
-                        other.getViews());                   
-                    
-            }
+                if ((other.getMonths().equals(Months.JANUARY)) && (other
+                    .getMonths().equals(Months.FEBRUARY)) && (other.getMonths()
+                        .equals(Months.MARCH))) {
+                    myArray[0] = new Statistics(Months.JANUARY, other
+                        .getComments(), other.getFollowers(), other.getLikes(),
+                        other.getPosts(), other.getViews());
+                    myArray[1] = new Statistics(Months.FEBRUARY, other
+                        .getComments(), other.getFollowers(), other.getLikes(),
+                        other.getPosts(), other.getViews());
+                    myArray[2] = new Statistics(Months.MARCH, other
+                        .getComments(), other.getFollowers(), other.getLikes(),
+                        other.getPosts(), other.getViews());
+
+                }
             }
         }
 
     }
-    
+
+
     /**
-     * public String equals() {
+     * tests the methods out
+     * to check if they are equal
      * 
-     * }
+     * @return boolean
+     * 
      */
     public boolean equals(Object obj) {
 
