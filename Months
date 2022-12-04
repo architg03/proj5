@@ -1,0 +1,13 @@
+/**
+*
+*@author Joshua Lee
+*@version 11/18/2022
+*@author Abia Zahir
+*@version 11/18/2022
+*@author Archit Gupta
+*@version 11/18/2022
+*/
+public enum Months {
+    JANUARY, FEBRUARY, MARCH;
+
+}

@@ -1,11 +1,13 @@
-import cs2.Button;
+.0import cs2.Button;
 import cs2.Shape;
 import cs2.Window;
 import cs2.WindowSide;
 import java.awt.Color;
 
 /**
- * 
+ * Front end class for the project. Displays a graphical interface
+ * End user has interactable buttons to find the fitted data for
+ * Janruary, Febrary and March
  */
 
 /**
