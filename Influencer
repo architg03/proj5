@@ -134,6 +134,201 @@ public class Influencer {
         return stats;
     }
 
+public void nameSort(Influencer args, Statistics other) {
+        Statistics temp;
+        for (int j = 0; j < myArray.length; j++) {
+            for (int i = j + 1; i < myArray.length; i++) {
+                if (myArray[0].compareTo(myArray[1]) < 0) {
+                    temp = myArray[j];
+                    myArray[j] = myArray[i];
+                    myArray[i] = temp;
+
+                }
+                if (this.name.equals(this.channel)) {
+                    myArray[0] = new Statistics(Months.JANUARY, 
+                        other.getComments(), other.getFollowers(), 
+                        other.getLikes(), other.getPosts(),
+                        other.getViews());
+                    myArray[1] = new Statistics(Months.FEBRUARY,
+                        other.getComments(), other.getFollowers(), 
+                        other.getLikes(), other.getPosts(),
+                        other.getViews());
+                    myArray[2] = new Statistics(Months.MARCH, 
+                        other.getComments(), other.getFollowers(), 
+                        other.getLikes(), other.getPosts(),
+                        other.getViews());                   
+                    
+            }
+            }
+        }
+    }
+
+
+    public void rateSort(EngagementCalculator calc, Statistics other) {
+        Statistics temp;
+        for (int j = 0; j < myArray.length; j++) {
+            for (int i = j + 1; i < myArray.length; i++) {
+                if (myArray[0].compareTo(myArray[1]) < 0) {
+                    temp = myArray[j];
+                    myArray[j] = myArray[i];
+                    myArray[i] = temp;
+
+                }
+                if (calc.getEngagementRate()==(calc.rate)) {
+                    myArray[0] = new Statistics(Months.JANUARY, 
+                        other.getComments(), other.getFollowers(), 
+                        other.getLikes(), other.getPosts(),
+                        other.getViews());
+
+                }
+            }
+        }
+    }
+
+
+    public void traditionalSort(EngagementCalculator calc, Statistics other) {
+        Statistics temp;
+        for (int j = 0; j < myArray.length; j++) {
+            for (int i = j + 1; i < myArray.length; i++) {
+                if (myArray[0].compareTo(myArray[1]) < 0) {
+                    temp = myArray[j];
+                    myArray[j] = myArray[i];
+                    myArray[i] = temp;
+
+                }
+                if (calc.getEngagementRate()==(calc.rate)) {
+                    myArray[0] = new Statistics(Months.JANUARY, 
+                        other.getComments(), other.getFollowers(), 
+                        other.getLikes(), other.getPosts(),
+                        other.getViews());
+                }
+            }
+
+        }
+    }
+
+
+    public void reachSort(EngagementCalculator calc, Statistics other) {
+        Statistics temp;
+        for (int j = 0; j < myArray.length; j++) {
+            for (int i = j + 1; i < myArray.length; i++) {
+                if (myArray[0].compareTo(myArray[1]) < 0) {
+                    temp = myArray[j];
+                    myArray[j] = myArray[i];
+                    myArray[i] = temp;
+
+                }
+                if (calc.reach==(calc.getEngagementReach())) {
+                    myArray[0] = new Statistics(Months.JANUARY, 
+                        other.getComments(), other.getFollowers(), 
+                        other.getLikes(), other.getPosts(),
+                        other.getViews());
+                }
+            }
+        }
+    }
+
+
+    public void janSort(Statistics other) {
+        Statistics temp;
+        for (int j = 0; j < myArray.length; j++) {
+            for (int i = j + 1; i < myArray.length; i++) {
+                if (myArray[0].compareTo(myArray[1]) < 0) {
+                    temp = myArray[j];
+                    myArray[j] = myArray[i];
+                    myArray[i] = temp;
+
+                }
+                if ((other.getMonths().equals(Months.JANUARY))) {
+                    myArray[0] = new Statistics(Months.JANUARY, 
+                        other.getComments(), other.getFollowers(), 
+                        other.getLikes(), other.getPosts(),
+                        other.getViews());
+                   
+                }
+            }
+
+        }
+
+    }
+
+
+    public void febSort(Statistics other) {
+        Statistics temp;
+        for (int j = 0; j < myArray.length; j++) {
+            for (int i = j + 1; i < myArray.length; i++) {
+                if (myArray[0].compareTo(myArray[1]) < 0) {
+                    temp = myArray[j];
+                    myArray[j] = myArray[i];
+                    myArray[i] = temp;
+
+                }
+                if ((other.getMonths().equals(Months.FEBRUARY))) {
+                    myArray[0] = new Statistics(Months.FEBRUARY, 
+                        other.getComments(), other.getFollowers(), 
+                        other.getLikes(), other.getPosts(),
+                        other.getViews());
+
+                }
+            }
+        }
+    }
+
+
+    public void marSort(Statistics other) {
+        Statistics temp;
+        for (int j = 0; j < myArray.length; j++) {
+            for (int i = j + 1; i < myArray.length; i++) {
+                if (myArray[0].compareTo(myArray[1]) < 0) {
+                    temp = myArray[j];
+                    myArray[j] = myArray[i];
+                    myArray[i] = temp;
+
+                }
+                if ((other.getMonths().equals(Months.MARCH))) {
+                    myArray[0] = new Statistics(Months.MARCH, 
+                        other.getComments(), other.getFollowers(), 
+                        other.getLikes(), other.getPosts(),
+                        other.getViews());
+                }
+            }
+        }
+
+    }
+
+
+    public void quarterSort(Statistics other) {
+        Statistics temp;
+        for (int j = 0; j < myArray.length; j++) {
+            for (int i = j + 1; i < myArray.length; i++) {
+                if (myArray[0].compareTo(myArray[1]) < 0) {
+                    temp = myArray[j];
+                    myArray[j] = myArray[i];
+                    myArray[i] = temp;
+
+                }
+                if ((other.getMonths().equals(Months.JANUARY)) &&
+                    (other.getMonths().equals(Months.FEBRUARY)) &&
+                    (other.getMonths().equals(Months.MARCH))) {
+                    myArray[0] = new Statistics(Months.JANUARY, 
+                        other.getComments(), other.getFollowers(), 
+                        other.getLikes(), other.getPosts(),
+                        other.getViews());
+                    myArray[1] = new Statistics(Months.FEBRUARY,
+                        other.getComments(), other.getFollowers(), 
+                        other.getLikes(), other.getPosts(),
+                        other.getViews());
+                    myArray[2] = new Statistics(Months.MARCH, 
+                        other.getComments(), other.getFollowers(), 
+                        other.getLikes(), other.getPosts(),
+                        other.getViews());                   
+                    
+            }
+            }
+        }
+
+    }
+    
 
     /**
      * Checks to see if two objects are equal.
