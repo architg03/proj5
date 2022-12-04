@@ -8,8 +8,9 @@
  * @version 11/18/2022
  * @version 11/18/2022
  * @version 11/18/2022
+ * @param <Months>
  */
-public class Statistics implements Comparable<Statistics> {
+public class Statistics<Months> implements Comparable<Statistics> {
 
     /** The likes. */
     private int likes;
@@ -25,6 +26,8 @@ public class Statistics implements Comparable<Statistics> {
     
     /** The views. */
     private int views;
+    
+    private Months month;
 
     /**
      * Instantiates a new statistics.
@@ -42,7 +45,7 @@ public class Statistics implements Comparable<Statistics> {
         followers = fw;
         comments = ct;
         views = vw;
-        Months.JANRARY = mon;
+        month = mon;
     }
 
 
