@@ -1,66 +1,66 @@
 import student.TestCase;
 
-/**
- * 
- */
+
 
 /**
+* The test class for the Statistics class, testing
+* all methods within Statistics.
 *
-*@author Joshua Lee
-*@version 11/18/2022
-*@author Abia Zahir
-*@version 11/18/2022
-*@author Archit Gupta
-*@version 11/18/2022
+* @author Joshua Lee
+* @version 11/18/2022
+* @author Abia Zahir
+* @version 11/18/2022
+* @author Archit Gupta
+* @version 11/18/2022
 */
 public class StatisticsTest extends TestCase {
     private Statistics stats;
     
     
     /**
-     * 
+     * Makes all objects for testing.
      */
     public void setUp() {
         stats = new Statistics(1, 2, 3, 4, 5);
     }
     
     /**
-     * 
+     * tests the getLikes() method.
      */
     public void testGetLikes() {
         assertEquals(1, stats.getLikes());
     }
     
     /**
-     * 
+     * tests the getPosts() method.
      */
     public void testGetPosts() {
         assertEquals(2, stats.getPosts());
     }
     
     /**
-     * 
+     * tests the getFollowers() method.
      */
     public void testGetFollowers() {
         assertEquals(3, stats.getFollowers());
     }
     
     /**
-     * 
+     * tests the getComments() method.
      */
     public void testGetComments() {
         assertEquals(4, stats.getComments());
     }
     
     /**
-     * 
+     * tests the getViews() method.
      */
     public void testGetViews() {
         assertEquals(5, stats.getViews());
     }
     
     /**
-     * 
+     * tests the isLessThanOrEqualTo() method.
      */
     public void testIsLessThanOrEqualTo() {
         Statistics stats1 = new Statistics(1, 2, 3, 4, 5);
@@ -86,7 +86,7 @@ public class StatisticsTest extends TestCase {
     }
     
     /**
-     * 
+     * tests the equals() method.
      */
     public void testEquals() {
         Statistics stats1 = new Statistics(1, 2, 3, 4, 5);
@@ -100,7 +100,7 @@ public class StatisticsTest extends TestCase {
     }
     
     /**
-     * 
+     * tests the compareTo() method.
      */
     public void testCompareTo() {
         Statistics stats1 = new Statistics(1, 2, 3, 4, 5);

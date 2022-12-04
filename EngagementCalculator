@@ -1,37 +1,94 @@
+import java.text.DecimalFormat;
+
+// TODO: Auto-generated Javadoc
+/**
+ * The Class EngagementCalculator.
+ */
 public class EngagementCalculator {
 
-public static final int RATING;
-    
+    /** The formatter. */
+    DecimalFormat formatter = new DecimalFormat();
+
+    /** The Constant RATING. */
+    public static final int RATING;
+
+    /** The rate. */
     double rate = 0;
+
+    /** The reach. */
     double reach = 0;
+
+    /** The total eng. */
     int totalEng = 0;
+
+    /** The total fol. */
     int totalFol = 0;
-    
+
+    /** The Constant RATE. */
     public static final int RATE = 3;
 
+    /** The data. */
     public Influencer<Person> data = new Influencer<Person>();
-        
-    
+
+    /**
+     * Instantiates a new engagement calculator.
+     *
+     * @param comments
+     *            the comments
+     * @throws IllegalException
+     *             the illegal exception
+     */
     public EngagementCalculator(Statistics comments) throws IllegalException {
         this.RATING = RATING;
     }
-    
+
+
+    /**
+     * Gets the engagement rate.
+     *
+     * @return the engagement rate
+     */
     public double getEngagementRate() {
-        rate = (totalEng/ totalFol) * (0.1);
+        formatter(rate = (totalEng / totalFol) * (0.1));
     }
-    
+
+
+    /**
+     * Gets the engagement reach.
+     *
+     * @return the engagement reach
+     */
     public double getEngagementReach() {
-        reach = (totalEng/ reach) * (0.1);
+        formatter(reach = (totalEng / reach) * (0.1));
+
     }
-    
+
+
+    /**
+     * Gets the engagement.
+     *
+     * @return the engagement
+     */
     public int getEngagement() {
-        sum = comments + likes;
+        formatter(sum = comments + likes);
     }
-    
+
+
+    /**
+     * Gets the followers.
+     *
+     * @return the followers
+     */
     public int getFollowers() {
         return followers;
     }
-    
+
+
+    /**
+     * Gets the reach.
+     *
+     * @return the reach
+     */
     public int getReach() {
         return views;
     }

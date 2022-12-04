@@ -4,6 +4,7 @@ import cs2.Window;
 import cs2.WindowSide;
 import java.awt.Color;
 
+// TODO: Auto-generated Javadoc
 /**
  * Front end class for the project. Displays a graphical interface
  * End user has interactable buttons to find the fitted data for
@@ -35,8 +36,9 @@ public class GUI {
     
     
     /**
-     * 
-     * @param calc
+     * Instantiates a new gui.
+     *
+     * @param reader the reader
      */
     public GUI(EngagementReader reader) {
         this.reader = reader;
@@ -74,63 +76,65 @@ public class GUI {
     }
     
     /**
-     * 
+     * Clicked quit.
+     *
+     * @param button the button
      */
     public void clickedQuit(Button button) {
         System.exit(0);
     }
     
     /**
-     * 
+     * Clicked name sort.
      */
     public void clickedNameSort() {
         
     }
     
     /**
-     * 
+     * Clicked rate sort.
      */
     public void clickedRateSort() {
         
     }
     
     /**
-     * 
+     * Clicked traditional.
      */
     public void clickedTraditional() {
         
     }
     
     /**
-     * 
+     * Clicked reach.
      */
     public void clickedReach() {
         
     }
     
     /**
-     * 
+     * Clicked jan.
      */
     public void clickedJan() {
         
     }
     
     /**
-     * 
+     * Clicked feb.
      */
     public void clickedFeb() {
         
     }
     
     /**
-     * 
+     * Clicked mar.
      */
     public void clickedMar() {
         
     }
     
     /**
-     * 
+     * Clicked quarter.
      */
     public void clickedQuarter() {
         

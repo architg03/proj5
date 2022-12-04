@@ -1,0 +1,35 @@
+import java.io.FileNotFoundException;
+import java.text.ParseException;
+
+// TODO: Auto-generated Javadoc
+/**
+ * The Class Main.
+ *
+ * @author Joshua Lee
+ * @author Abia Zahir
+ * @author Archit Gupta
+ * @version 11/18/2022
+ * @version 11/18/2022
+ * @version 11/18/2022
+ */
+class Main {
+    
+    /**
+     * The main method.
+     *
+     * @param args the arguments
+     * @throws ParseException the parse exception
+     * @throws FileNotFoundException the file not found exception
+     */
+    public static void main(String[] args)
+        throws ParseException,
+        FileNotFoundException {
+
+        if (args.length == 1) {
+            new EngagementReader(args[0]);
+        }
+        else {
+            new EngagementReader("SampleInput1_2022.csv");
+        }
+    }
+}

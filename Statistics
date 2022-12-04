@@ -1,47 +1,107 @@
+// TODO: Auto-generated Javadoc
+/**
+ * The Class Statistics.
+ *
+ * @author Joshua Lee
+ * @author Abia Zahir
+ * @author Archit Gupta
+ * @version 11/18/2022
+ * @version 11/18/2022
+ * @version 11/18/2022
+ */
 public class Statistics implements Comparable<Statistics> {
 
+    /** The likes. */
     private int likes;
+    
+    /** The posts. */
     private int posts;
+    
+    /** The followers. */
     private int followers;
+    
+    /** The comments. */
     private int comments;
+    
+    /** The views. */
     private int views;
 
-    public Statistics(int li, int pt, int fw, int ct, int vw) {
-
+    /**
+     * Instantiates a new statistics.
+     *
+     * @param mon the month
+     * @param li the likes
+     * @param pt the posts
+     * @param fw the followers
+     * @param ct the comments
+     * @param vw the views
+     */
+    public Statistics(Months mon, int li, int pt, int fw, int ct, int vw) {
         likes = li;
         posts = pt;
         followers = fw;
         comments = ct;
         views = vw;
-
+        Months.JANRARY = mon;
     }
 
 
+    /**
+     * Gets the likes.
+     *
+     * @return the likes
+     */
     public int getLikes() {
         return likes;
     }
 
 
+    /**
+     * Gets the posts.
+     *
+     * @return the posts
+     */
     public int getPosts() {
         return posts;
     }
 
 
+    /**
+     * Gets the followers.
+     *
+     * @return the followers
+     */
     public int getFollowers() {
         return followers;
     }
 
 
+    /**
+     * Gets the comments.
+     *
+     * @return the comments
+     */
     public int getComments() {
         return comments;
     }
 
 
+    /**
+     * Gets the views.
+     *
+     * @return the views
+     */
     public int getViews() {
         return views;
     }
 
 
+    /**
+     * Checks if is less than or equal to.
+     *
+     * @param other the other
+     * @return true, if is less than or equal to
+     */
     public boolean isLessThanOrEqualTo(Statistics other) {
         if ((this.likes <= other.likes) && (this.posts <= other.posts)
             && (this.followers <= other.followers)
@@ -55,6 +115,12 @@ public class Statistics implements Comparable<Statistics> {
     }
 
 
+    /**
+     * Equals.
+     *
+     * @param obj the obj
+     * @return true, if successful
+     */
     public boolean equals(Object obj) {
         if (this == obj) {
             return true;
@@ -74,6 +140,12 @@ public class Statistics implements Comparable<Statistics> {
     }
 
 
+    /**
+     * Compare to.
+     *
+     * @param stats the stats
+     * @return the int
+     */
     @Override
     public int compareTo(Statistics stats) {
         if (stats == null) {

@@ -1,92 +1,87 @@
+
 import student.TestCase;
 
+// TODO: Auto-generated Javadoc
 /**
- * 
+ * InfluencerTest class tests all methods in the
+ * Influencer class.
+ *
+ * @author Joshua Lee
+ * @author Abia Zahir
+ * @author Archit Gupta
+ * @version 11/18/2022
+ * @version 11/18/2022
+ * @version 11/18/2022
  */
-
-/**
-*
-*@author Joshua Lee
-*@version 11/18/2022
-*@author Abia Zahir
-*@version 11/18/2022
-*@author Archit Gupta
-*@version 11/18/2022
-*/
 public class InfluencerTest extends TestCase {
+
+    /** The influencer. */
     private Influencer influencer;
-    
-    
+
     /**
-     * 
+     * Creates all objects for testing.
      */
     public void setUp() {
-        influencer = new Influencer(new Months, "Tom Holland", 
-            "Marvel", "UK", "Action", 20000, 300, 900000, 4000, 50000); 
+        influencer = new Influencer("Tom Holland", "Marvel", "UK", "Action",
+            "January", 5000, 100, 90000, 1200, 8000);
     }
-    
+
+
     /**
-     * 
+     * Tests the getName() method.
      */
     public void testGetName() {
         assertEquals("Tom Holland", influencer.getName());
     }
-    
+
+
     /**
-     * 
+     * Tests the getChannel() method.
      */
     public void testGetChannel() {
         assertEquals("Marvel", influencer.getChannel());
     }
-    
+
+
     /**
-     * 
-     */
-    public void testGetCountry() {
-        assertEquals("UK", influencer.getCountry());
-    }
-    
-    /**
-     * 
+     * Tests the getTopic() method.
      */
     public void testGetTopic() {
         assertEquals("Action", influencer.getTopic());
     }
-    
+
+
     /**
-     * 
+     * Tests the getMonth() method.
      */
-    public void testSort() {
-        
+    public void testGetMonth() {
+        assertEquals("January", influencer.getName());
     }
-    
+
+
     /**
-     * 
+     * Tests the getStats() method.
      */
-    public void testAddStatistics() {
-        
+    public void testGetStats() {
+        Statistics stat = new Statistics(5000, 100, 90000, 1200, 8000);
+        assertEquals(stat, influencer.getStats());
     }
-    
+
+
     /**
-     * 
+     * Tests the equals() method.
      */
     public void testEquals() {
-        Influencer influencer2 = new Influencer(new Months, "Kim Kardashian", 
-            "NBC", "US", "Fashion", 50000, 400, 1000000, 6000, 80000);
-        Influencer influencer3 = new Influencer(new Months, "Tom Holland", 
-            "Marvel", "UK", "Action", 40000, 300, 900000, 4000, 40000);
-        Influencer influencer4 = new Influencer(new Months, "Tom Holland", 
-            "Marvel", "UK", "Action", 20000, 300, 900000, 4000, 50000);
-        
-        assertTrue(influencer.equals(influencer));
-        assertTrue(influencer.equals(influencer4));
-        
-        
-        assertFalse(influencer.equals(influencer2));
-        assertFalse(influencer.equals(influencer3));
-        assertFalse(influencer.equals(null));
-        assertFalse(influencer.equals("false"));
-    }
-    
+        Influencer influencer2 = new Influencer("Tom Holland", "Marvel", "UK",
+            "Action", "January", 5000, 100, 90000, 1200, 8000);
+        Influencer influencer3 = new Influencer("Kim Kardashian", "Kim K", "US",
+            "Fashion", "February", 6000, 300, 100000, 2000, 9000);
 
+        assertTrue(influencer.equals(influencer));
+        assertTrue(influencer.equals(influencer2));
+        assertFalse(influencer.equals(null));
+        String string = "false";
+        assertFalse(influencer.equals(string));
+        assertFalse(influencer3);
+    }
 }

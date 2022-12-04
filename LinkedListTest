@@ -1,27 +1,33 @@
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 import student.TestCase;
+
+// TODO: Auto-generated Javadoc
 /**
-*
-*@author Joshua Lee
-*@version 11/18/2022
-*@author Abia Zahir
-*@version 11/18/2022
-*@author Archit Gupta
-*@version 11/18/2022
-*/
+ * The Class LinkedListTest.
+ *
+ * @author Joshua Lee
+ * @author Abia Zahir
+ * @author Archit Gupta
+ * @version 11/18/2022
+ * @version 11/18/2022
+ * @version 11/18/2022
+ */
 public class LinkedListTest extends TestCase {
+    
+    /** The list. */
     private LinkedList<String> list;
-  
+
     /**
-     *Creates all objects for testing.
+     * Creates all objects for testing.
      */
     public void setUp() {
         list = new LinkedList<String>();
     }
 
+
     /**
-     *Tests the size() method.
+     * Tests the size() method.
      */
     public void testSize() {
         assertEquals(0, list.size());
@@ -29,9 +35,9 @@ public class LinkedListTest extends TestCase {
         assertEquals(1, list.size());
     }
 
-  
+
     /**
-     *Tests the empty() method.
+     * Tests the empty() method.
      */
     public void testIsEmpty() {
         assertTrue(list.isEmpty());
@@ -40,8 +46,9 @@ public class LinkedListTest extends TestCase {
         assertFalse(list.isEmpty());
     }
 
+
     /**
-     *Tests the clear() method.
+     * Tests the clear() method.
      */
     public void testClear() {
         list.add("one");
@@ -52,8 +59,9 @@ public class LinkedListTest extends TestCase {
         assertTrue(list.isEmpty());
     }
 
+
     /**
-     *Tests the add() method.
+     * Tests the add() method.
      */
     public void testAdd() {
         list.add("one");
@@ -63,8 +71,9 @@ public class LinkedListTest extends TestCase {
         assertEquals(2, list.size());
     }
 
+
     /**
-     *Tests the contains() method.
+     * Tests the contains() method.
      */
     public void testContains() {
         String one = "one";
@@ -72,11 +81,12 @@ public class LinkedListTest extends TestCase {
 
         list.add(one);
         assertTrue(list.contains(one));
-    
+
     }
 
+
     /**
-     *Tests the lastIndex() method.
+     * Tests the lastIndex() method.
      */
     public void testLastIndex() {
         list.add("one");
@@ -88,10 +98,9 @@ public class LinkedListTest extends TestCase {
         assertEquals(3, list.lastIndex("one"));
     }
 
-  
 
     /**
-     *Tests the toString() method.
+     * Tests the toString() method.
      */
     public void testToString() {
         list.add("one");
@@ -100,45 +109,45 @@ public class LinkedListTest extends TestCase {
         String string = "{one, two, three}";
         assertEquals(string, list.toString());
     }
-  
+
+
     /**
-     * 
+     * Test has next.
      */
     public void testHasNext() {
         Iterator<String> iter = list.iterator();
         list.add("first");
         list.add("second");
-      
+
         assertTrue(iter.hasNext());
         iter.next();
         assertTrue(iter.hasNext());
         iter.next();
         assertFalse(iter.hasNext());
     }
-  
+
+
     /**
-     * 
+     * Test next.
      */
     public void testNext() {
         Iterator<String> iter = list.iterator();
         list.add("first");
         list.add("second");
-      
+
         assertEquals("first", iter.next());
         assertEquals("second", iter.next());
-      
+
         Exception exception = null;
-        try
-        {
+        try {
             iter.next();
             fail("next() is not throwing an exception when it should");
         }
-        catch (Exception e)
-        {
+        catch (Exception e) {
             exception = e;
         }
         assertTrue("next() is throwing the wrong type of exceptions",
             exception instanceof NoSuchElementException);
     }
-  
+
 }
