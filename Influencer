@@ -13,54 +13,20 @@
  */
 public class Influencer {
 
-    /** The name. */
     private String name;
-    
-    /** The channel. */
     private String channel;
-    
-    /** The country. */
     private String country;
-    
-    /** The topic. */
     private String topic;
-    
-    /** The months. */
-    private String months;
-    
-    /** The stats. */
-    private Statistics stats;
+    private Months months;
+    @SuppressWarnings("rawtypes")
+    private Statistics[] myArray;
 
-    /**
-     * The constructor for the Influencer class.
-     * 
-     * @param name
-     *            String of influencer's name.
-     * @param channel
-     *            String of influencer's channel.
-     * @param country
-     *            String of influencer's country.
-     * @param topic
-     *            String of influencer's topic.
-     * @param months
-     *            String of influencer's months.
-     * @param li
-     *            Integer representing likes.
-     * @param pt
-     *            Integer representing posts.
-     * @param fw
-     *            Integer representing followers.
-     * @param ct
-     *            Integer representing comments.
-     * @param vw
-     *            Integer representing views.
-     */
     public Influencer(
+        Months months,
         String name,
         String channel,
         String country,
         String topic,
-        String months,
         int li,
         int pt,
         int fw,
@@ -70,71 +36,39 @@ public class Influencer {
         this.channel = channel;
         this.country = country;
         this.topic = topic;
-        this.months = months;
-        this.stats = new Statistics(li, pt, fw, ct, vw);
+
+        myArray = new Statistics[3];
+        myArray[0] = new Statistics(months, li, pt, fw, ct, vw);
+
     }
 
 
-    /**
-     * Gets the name field.
-     * 
-     * @return String name field.
-     */
     public String getName() {
         return name;
     }
 
 
-    /**
-     * Gets the channel field.
-     * 
-     * @return String channel field.
-     */
     public String getChannel() {
         return channel;
     }
 
 
-    /**
-     * Gets the country field.
-     * 
-     * @return String country field.
-     */
     public String getCountry() {
         return country;
     }
 
 
-    /**
-     * Gets the topic field.
-     * 
-     * @return String topic field.
-     */
     public String getTopic() {
         return topic;
     }
 
 
-    /**
-     * Gets the month field.
-     * 
-     * @return String month field.
-     */
-    public String getMonth() {
-        return months;
+    public Statistics[] getStats() {
+        return myArray;
     }
 
 
-    /**
-     * Gets the stats field.
-     * 
-     * @return Statistics object.
-     */
-    public Statistics getStats() {
-        return stats;
-    }
-
-public void nameSort(Influencer args, Statistics other) {
+    public void nameSort(Influencer args, Statistics other) {
         Statistics temp;
         for (int j = 0; j < myArray.length; j++) {
             for (int i = j + 1; i < myArray.length; i++) {
@@ -329,13 +263,10 @@ public void nameSort(Influencer args, Statistics other) {
 
     }
     
-
     /**
-     * Checks to see if two objects are equal.
-     *
-     * @param obj the obj
-     * @return true if objects are equal,
-     *         false if otherwise.
+     * public String equals() {
+     * 
+     * }
      */
     public boolean equals(Object obj) {
 

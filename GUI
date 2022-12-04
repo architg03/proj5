@@ -1,4 +1,4 @@
-.0import cs2.Button;
+import cs2.Button;
 import cs2.Shape;
 import cs2.Window;
 import cs2.WindowSide;
@@ -88,7 +88,28 @@ public class GUI {
      * Clicked name sort.
      */
     public void clickedNameSort() {
-        
+        if (nameSort == null) {
+            TextShape text = new TextShape(0,0, "Sort by Channel Name");
+            int x = window.getGraphPanelWidth()/2 - text.getWidth()/2;
+            int y = window.getGraphPanelHeight()/2 - text.getHeight()/2;
+            text.setX(x);
+            text.setY(y);
+            
+            window.addShape(text);
+            }
+        else{
+            int size = nextInt(50) + 50;
+            int x = randomGenerator.nextInt(window.getGraphPanelWidth() - size);
+            int y = randomGenerator.nextInt(window.getGraphPanelHeight() - size);
+            nameSort = new Shape(x, y, size, Color.GRAY);
+
+            nameSort.onClick(this, "clickedQuit");
+            window.addButton(quitButton, WindowSide.NORTH);
+            
+            
+            currentShape = new CircleShape(x, y, size, Color.RED);
+
+        }
     }
     
     /**

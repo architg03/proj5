@@ -26,7 +26,8 @@ public class Statistics<Months> implements Comparable<Statistics> {
     
     /** The views. */
     private int views;
-    
+
+    /** The months. */
     private Months month;
 
     /**
