@@ -1,0 +1,138 @@
+import cs2.Button;
+import cs2.Shape;
+import cs2.Window;
+import cs2.WindowSide;
+import java.awt.Color;
+
+/**
+ * 
+ */
+
+/**
+*
+*@author Joshua Lee
+*@version 11/18/2022
+*@author Abia Zahir
+*@version 11/18/2022
+*@author Archit Gupta
+*@version 11/18/2022
+*/
+public class GUI {
+    private Window window;
+    private Button quit;
+    private Button nameSort;
+    private Button rateSort;
+    private Button traditional;
+    private Button reach;
+    private Button jan;
+    private Button feb;
+    private Button mar;
+    private Button quarter;
+    private EngagementCalculator calculator;
+    private EngagementReader reader;
+    
+    
+    /**
+     * 
+     * @param calc
+     */
+    public GUI(EngagementReader reader) {
+        this.reader = reader;
+        window = new Window("Social Media Visualization");
+        
+        nameSort = new Button("Sort by Channel Name");
+        this.window.addButton(nameSort, WindowSide.NORTH);
+        
+        rateSort = new Button("Sort by Engagement Rate");
+        this.window.addButton(rateSort, WindowSide.NORTH);
+        
+        quit = new Button("Quit");
+        this.window.addButton(quit, WindowSide.NORTH);
+        quit.onClick(this, "clickedQuit");
+        
+        traditional = new Button("Traditional Engagement Rate");
+        this.window.addButton(traditional, WindowSide.WEST);
+        
+        reach = new Button("Reach Engagement Rate");
+        this.window.addButton(reach, WindowSide.WEST);
+        
+        jan = new Button("January");
+        this.window.addButton(jan, WindowSide.SOUTH);
+        
+        feb = new Button("February");
+        this.window.addButton(feb, WindowSide.SOUTH);
+        
+        mar = new Button("March");
+        this.window.addButton(mar, WindowSide.SOUTH);
+        
+        quarter = new Button("First Quarter (Jan - March)");
+        this.window.addButton(quarter, WindowSide.SOUTH);
+        
+        
+    }
+    
+    /**
+     * 
+     */
+    public void clickedQuit(Button button) {
+        System.exit(0);
+    }
+    
+    /**
+     * 
+     */
+    public void clickedNameSort() {
+        
+    }
+    
+    /**
+     * 
+     */
+    public void clickedRateSort() {
+        
+    }
+    
+    /**
+     * 
+     */
+    public void clickedTraditional() {
+        
+    }
+    
+    /**
+     * 
+     */
+    public void clickedReach() {
+        
+    }
+    
+    /**
+     * 
+     */
+    public void clickedJan() {
+        
+    }
+    
+    /**
+     * 
+     */
+    public void clickedFeb() {
+        
+    }
+    
+    /**
+     * 
+     */
+    public void clickedMar() {
+        
+    }
+    
+    /**
+     * 
+     */
+    public void clickedQuarter() {
+        
+    }
+    
+
+}

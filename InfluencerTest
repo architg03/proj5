@@ -1,0 +1,92 @@
+import student.TestCase;
+
+/**
+ * 
+ */
+
+/**
+*
+*@author Joshua Lee
+*@version 11/18/2022
+*@author Abia Zahir
+*@version 11/18/2022
+*@author Archit Gupta
+*@version 11/18/2022
+*/
+public class InfluencerTest extends TestCase {
+    private Influencer influencer;
+    
+    
+    /**
+     * 
+     */
+    public void setUp() {
+        influencer = new Influencer(new Months, "Tom Holland", 
+            "Marvel", "UK", "Action", 20000, 300, 900000, 4000, 50000); 
+    }
+    
+    /**
+     * 
+     */
+    public void testGetName() {
+        assertEquals("Tom Holland", influencer.getName());
+    }
+    
+    /**
+     * 
+     */
+    public void testGetChannel() {
+        assertEquals("Marvel", influencer.getChannel());
+    }
+    
+    /**
+     * 
+     */
+    public void testGetCountry() {
+        assertEquals("UK", influencer.getCountry());
+    }
+    
+    /**
+     * 
+     */
+    public void testGetTopic() {
+        assertEquals("Action", influencer.getTopic());
+    }
+    
+    /**
+     * 
+     */
+    public void testSort() {
+        
+    }
+    
+    /**
+     * 
+     */
+    public void testAddStatistics() {
+        
+    }
+    
+    /**
+     * 
+     */
+    public void testEquals() {
+        Influencer influencer2 = new Influencer(new Months, "Kim Kardashian", 
+            "NBC", "US", "Fashion", 50000, 400, 1000000, 6000, 80000);
+        Influencer influencer3 = new Influencer(new Months, "Tom Holland", 
+            "Marvel", "UK", "Action", 40000, 300, 900000, 4000, 40000);
+        Influencer influencer4 = new Influencer(new Months, "Tom Holland", 
+            "Marvel", "UK", "Action", 20000, 300, 900000, 4000, 50000);
+        
+        assertTrue(influencer.equals(influencer));
+        assertTrue(influencer.equals(influencer4));
+        
+        
+        assertFalse(influencer.equals(influencer2));
+        assertFalse(influencer.equals(influencer3));
+        assertFalse(influencer.equals(null));
+        assertFalse(influencer.equals("false"));
+    }
+    
+
+}

@@ -1,0 +1,144 @@
+import java.util.Iterator;
+import java.util.NoSuchElementException;
+import student.TestCase;
+/**
+*
+*@author Joshua Lee
+*@version 11/18/2022
+*@author Abia Zahir
+*@version 11/18/2022
+*@author Archit Gupta
+*@version 11/18/2022
+*/
+public class LinkedListTest extends TestCase {
+    private LinkedList<String> list;
+  
+    /**
+     *Creates all objects for testing.
+     */
+    public void setUp() {
+        list = new LinkedList<String>();
+    }
+
+    /**
+     *Tests the size() method.
+     */
+    public void testSize() {
+        assertEquals(0, list.size());
+        list.add("one");
+        assertEquals(1, list.size());
+    }
+
+  
+    /**
+     *Tests the empty() method.
+     */
+    public void testIsEmpty() {
+        assertTrue(list.isEmpty());
+
+        list.add("one");
+        assertFalse(list.isEmpty());
+    }
+
+    /**
+     *Tests the clear() method.
+     */
+    public void testClear() {
+        list.add("one");
+        list.add("two");
+        assertFalse(list.isEmpty());
+
+        list.clear();
+        assertTrue(list.isEmpty());
+    }
+
+    /**
+     *Tests the add() method.
+     */
+    public void testAdd() {
+        list.add("one");
+        assertEquals(1, list.size());
+
+        list.add("two");
+        assertEquals(2, list.size());
+    }
+
+    /**
+     *Tests the contains() method.
+     */
+    public void testContains() {
+        String one = "one";
+        assertFalse(list.contains(one));
+
+        list.add(one);
+        assertTrue(list.contains(one));
+    
+    }
+
+    /**
+     *Tests the lastIndex() method.
+     */
+    public void testLastIndex() {
+        list.add("one");
+        list.add("two");
+        list.add("three");
+        assertEquals(0, list.lastIndex("one"));
+
+        list.add("one");
+        assertEquals(3, list.lastIndex("one"));
+    }
+
+  
+
+    /**
+     *Tests the toString() method.
+     */
+    public void testToString() {
+        list.add("one");
+        list.add("two");
+        list.add("three");
+        String string = "{one, two, three}";
+        assertEquals(string, list.toString());
+    }
+  
+    /**
+     * 
+     */
+    public void testHasNext() {
+        Iterator<String> iter = list.iterator();
+        list.add("first");
+        list.add("second");
+      
+        assertTrue(iter.hasNext());
+        iter.next();
+        assertTrue(iter.hasNext());
+        iter.next();
+        assertFalse(iter.hasNext());
+    }
+  
+    /**
+     * 
+     */
+    public void testNext() {
+        Iterator<String> iter = list.iterator();
+        list.add("first");
+        list.add("second");
+      
+        assertEquals("first", iter.next());
+        assertEquals("second", iter.next());
+      
+        Exception exception = null;
+        try
+        {
+            iter.next();
+            fail("next() is not throwing an exception when it should");
+        }
+        catch (Exception e)
+        {
+            exception = e;
+        }
+        assertTrue("next() is throwing the wrong type of exceptions",
+            exception instanceof NoSuchElementException);
+    }
+  
+}
